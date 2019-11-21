@@ -1,0 +1,136 @@
+<html>
+  <!--Creadores: Alejandro Massotti Lopez, 100383565. Javier Fernández Velasco, 100383392-->
+  <!--La pagina web está subida a internet: http://ceyma.com/pray4game -->
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://kit.fontawesome.com/a57046b127.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+  <div class="centrar">
+    <!-- INICIO de la cabecera habitual -->
+    <div class="head">
+      <div class="row">
+        <p class="tituloHead">PRAY 4 GAME</p>
+      </div>
+    </div>
+    <!-- FIN de la cabecera habitual -->
+
+
+    <!-- Div formulario -->
+    <div class="centralFormularios">
+    <div id="divFormulario">
+      <div class="formularioBox">
+      <form id="register" name="register" onsubmit="return false">
+        <h1>REGISTRO</h1>
+        <hr>
+        <p><strong>INFORMACIÓN DE LA CUENTA</strong></p>
+        <div class="row">
+          <div class="filaAuto">
+          <label id="icon" for="nombreUsuario"><i class="formulario fas fa-user" title="Nombre de usuario"></i></label>
+          <input type="text" name="nombreUsuario" size="40" required placeholder="Username">
+          </div>
+          <div class="filaAuto">
+          <label id="icon" for="contraseña"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+          <input type="password" name="contraseña" required placeholder="Contraseña">
+          </div>
+        </div>
+        <hr>
+        <p><strong>INFORMACIÓN PERSONAL</strong></p>
+        <div class="row">
+        <div class="filaAuto">
+          <label id="icon" for="nombre"><i class="formulario fas fa-id-badge" title="Nombre"></i></label>
+          <input type="text" name="nombre" size="40"required placeholder="Nombre">
+        </div>
+        <div class="filaAuto">
+          <label id="icon" for="apellidos"><i class="formulario fas fa-address-card" title="Apellidos"></i></label>
+          <input type="text" name="apellidos" size="40"required placeholder="Apellidos">
+        </div>
+        </div>
+        <p>
+        <div class="row">
+        <div class="filaAuto">
+          <label id="icon" for="email"><i class="formulario fas fa-envelope"  title="Email"></i></label>
+          <input type="text" name="email" maxlength="80" size="30"required placeholder="Email">
+        </div>
+        <div class="filaAuto"> 
+          <label id="icon" for="fecha"><i class="formulario fas fa-birthday-cake" title="Fecha de nacimiento"></i></label>
+          <input type="date" name="fecha" required placeholder="Fecha de nacimiento">
+        </div>
+        </div>
+        </p>
+        <div class="row">
+        <p class="centrarCheck">
+          <p>Selecciona tus intereses:</p>
+          <p><input type="checkbox" name="peliculas"> Películas
+          <input type="checkbox" name="deportes"> Deportes
+          <input type="checkbox" name="videojuegos"> Videojuegos</p>
+        </p>
+        </div>
+  
+        <div class="row">
+        <p class="centrarCheck">
+          <p>
+          <select name="idioma" title="idioma">
+            <option>Idioma</option>
+            <option>Inglés</option>
+            <option>Español</option>
+            <option>Italiano</option>
+            <option>Chino</option>
+            <option>Portugués</option>
+            <option>Ruso</option>
+            <option>Alemán</option>
+          </select>
+          </p>
+        </p>
+        </div>
+        <div class="row">
+        <p class="centrarCheck">
+          <p>
+          <select name="uso_app" title="uso">
+            <option>Uso</option>
+            <option>Trabajo</option>
+            <option>Ocio</option>
+            <option>Aprendizaje</option>
+          </select>
+          </p>
+        </p>
+        </div>
+        <hr>
+        <div class="row">
+        <p class="centrarCheck">
+          He leído y acepto las Condiciones de uso: <input type="checkbox" name="condiciones" required />
+        </p>
+        </div>
+        <div class="row">
+        <p class="centrarCheck">
+          <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" onclick="registerForm();" title="enviar">
+          <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+        </p>
+        </div>
+      </form>
+      </div>
+    </div>
+    </div>
+
+
+
+    <!-- INICIO del pie de pagina -->
+    <div class="foot">
+    <div class="footSocial">
+      <div class="row nombreFoot"><p class="fontNombreFoot1">Redes sociales</p></div>
+      <div class="row"><p class="fontNombreFoot2">Siguenos</p></div>
+      <div class="rrssFoot"><span><i class="fab fa-facebook-square fa-2x" title="facebook"></i> </span> <span><i class="fab fa-instagram fa-2x" title="instagram"></i> </span> <span><i class="fab fa-twitter-square fa-2x" title="twitter"></i> </span> <span><i class="fab fa-whatsapp-square fa-2x" title="whatsApp"></i> </span> <span><i class="fab fa-snapchat-square fa-2x" title="snapchat"></i> </span> <span><i class="fab fa-youtube fa-2x" title="youtube"></i></span></div>
+      <div class="opcionesFoot"><span>Idioma</span><span>FAQ</span><span>Contacto</span><span>Mapa del sitio</span><span>Sobre nosotros</span><span>Aspectos legales</span><span>Politicas de privacidad</span></div>
+    </div>
+    <hr class="lineaFoot">
+    <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
+    </div>
+    <!-- FIN del pie de pagina -->
+    
+    </div>
+  </body>
+</html>
