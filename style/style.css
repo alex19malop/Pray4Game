@@ -394,14 +394,3 @@ select:focus {
 .registrate_IniciarSesionBoton a:hover{
   color: #bf0000;
 }
-
-/**************************************************************************/
-/*************************MENU DEBAJO DEL HEAD*****************************/
-/**************************************************************************/
-.menuUsuariosRegitrados{
-  width: 400px;
-  height: 40px;
-  display: flex;
-  background-color:  #800000;
-
-}

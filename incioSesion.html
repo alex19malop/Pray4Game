@@ -24,17 +24,17 @@
     <div class="centralFormularios">
     <div id="divInicioSesion">
       <div class="formularioBox">
-      <form id="inicioSes" name="inicioSes" onsubmit="return false">
+      <form id="inicioSes" name="inicioSes" method="POST" action="initSesion.php">
         <h1>INICIAR SESIÓN</h1>
         <hr>
         <label id="icon" for="email"><i class="formulario fas fa-envelope"  title="Email"></i></label>
         <input type="text" name="email" maxlength="80" size="30"required placeholder="Email">
-        <label id="icon" for="contraseña"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
-        <input type="password" name="contraseña" required placeholder="Contraseña">
+        <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+        <input type="password" name="contrasena" required placeholder="Contraseña">
         <hr>
         <div class="row">
         <p class="centrarCheck">
-          <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" onclick="initForm();" title="enviar">
+          <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
           <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
         </p>
         </div>
@@ -57,7 +57,7 @@
     <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
     </div>
     <!-- FIN del pie de pagina -->
-    
+
     </div>
   </body>
 </html>

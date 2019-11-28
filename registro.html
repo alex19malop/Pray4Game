@@ -24,7 +24,7 @@
     <div class="centralFormularios">
     <div id="divFormulario">
       <div class="formularioBox">
-      <form id="register" name="register" onsubmit="return false">
+      <form id="register" name="register" method="POST" action="register.php">
         <h1>REGISTRO</h1>
         <hr>
         <p><strong>INFORMACIÓN DE LA CUENTA</strong></p>
@@ -34,8 +34,8 @@
           <input type="text" name="nombreUsuario" size="40" required placeholder="Username">
           </div>
           <div class="filaAuto">
-          <label id="icon" for="contraseña"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
-          <input type="password" name="contraseña" required placeholder="Contraseña">
+          <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+          <input type="password" name="contrasena" required placeholder="Contraseña">
           </div>
         </div>
         <hr>
@@ -46,7 +46,7 @@
           <input type="text" name="nombre" size="40"required placeholder="Nombre">
         </div>
         <div class="filaAuto">
-          <label id="icon" for="apellidos"><i class="formulario fas fa-address-card" title="Apellidos"></i></label>
+          <label id="icon" for="apellidos"><i class="formulario fas fa-address-card" title="apellidos"></i></label>
           <input type="text" name="apellidos" size="40"required placeholder="Apellidos">
         </div>
         </div>
@@ -56,49 +56,12 @@
           <label id="icon" for="email"><i class="formulario fas fa-envelope"  title="Email"></i></label>
           <input type="text" name="email" maxlength="80" size="30"required placeholder="Email">
         </div>
-        <div class="filaAuto"> 
+        <div class="filaAuto">
           <label id="icon" for="fecha"><i class="formulario fas fa-birthday-cake" title="Fecha de nacimiento"></i></label>
           <input type="date" name="fecha" required placeholder="Fecha de nacimiento">
         </div>
         </div>
         </p>
-        <div class="row">
-        <p class="centrarCheck">
-          <p>Selecciona tus intereses:</p>
-          <p><input type="checkbox" name="peliculas"> Películas
-          <input type="checkbox" name="deportes"> Deportes
-          <input type="checkbox" name="videojuegos"> Videojuegos</p>
-        </p>
-        </div>
-  
-        <div class="row">
-        <p class="centrarCheck">
-          <p>
-          <select name="idioma" title="idioma">
-            <option>Idioma</option>
-            <option>Inglés</option>
-            <option>Español</option>
-            <option>Italiano</option>
-            <option>Chino</option>
-            <option>Portugués</option>
-            <option>Ruso</option>
-            <option>Alemán</option>
-          </select>
-          </p>
-        </p>
-        </div>
-        <div class="row">
-        <p class="centrarCheck">
-          <p>
-          <select name="uso_app" title="uso">
-            <option>Uso</option>
-            <option>Trabajo</option>
-            <option>Ocio</option>
-            <option>Aprendizaje</option>
-          </select>
-          </p>
-        </p>
-        </div>
         <hr>
         <div class="row">
         <p class="centrarCheck">
@@ -107,7 +70,7 @@
         </div>
         <div class="row">
         <p class="centrarCheck">
-          <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" onclick="registerForm();" title="enviar">
+          <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
           <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
         </p>
         </div>
@@ -115,6 +78,12 @@
       </div>
     </div>
     </div>
+
+
+
+
+
+
 
 
 
@@ -130,7 +99,7 @@
     <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
     </div>
     <!-- FIN del pie de pagina -->
-    
+
     </div>
   </body>
 </html>
