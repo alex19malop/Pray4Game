@@ -29,6 +29,18 @@ hr{
   width: 100%;
   height: 500px;
 }
+img.image {
+  vertical-align: middle;
+  max-width: 100%;
+  border: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+}
+img.image:hover {
+  filter: grayscale(85%);
+}
+
 /*----------------------------------------------------------------------------*/
 /*-----------CABECERA DE LA PAGINA: esta en todas las pag de la web-----------*/
 .head{
@@ -46,7 +58,7 @@ hr{
   font-weight: 700;
   color: #ffffff;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.65);
-  font-size: 103px;
+  font-size: 600%;
   margin: 0;
   padding: 0;
   padding-top: 30px;
@@ -522,4 +534,134 @@ select:focus {
   font-weight: 300;
   font-size: medium;
   color: black;
+}
+
+
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*-----------------------ESPACIO CENTRAL USUARIOS REGISTRADOS--------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+
+.tituloBocadilloConsola {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom:20px;
+}
+.tituloConsola {
+  width: 100%;
+  text-align: center;
+  margin: 5px;    
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 28px;    
+  color: white;
+}
+.bocadilloConsola {
+  margin: 5px;    
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.bloque {  
+  width: auto; 
+  max-width: 30%; 
+  height: 100%; /* Al hacer que ocupe el 100% de altura de la bigbox, provoca que los siguientes bloques se vayan a la derecha */
+  margin-right: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  background-color: #bf0000;
+}
+.bloque:last-child {  /* El ultimo bloque no debe de tener margen derecho*/
+  margin-right: 0;
+}
+
+.bigbox {
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+}
+.minibloque {
+  position: relative;
+  height: auto;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 10px 4px;
+  margin-bottom:30px;
+  background: rgb(212, 212, 212);
+}
+.minibloque .row {
+  display: block;
+  justify-content: space-between;
+}
+.minibloque .row:last-child {
+  flex-direction: row-reverse;
+}
+.close {
+  margin-top: -2px;
+  margin-right: -2.2px;  
+}
+.minibloque .close {
+  position: absolute;
+  top:-20px;
+  right: 0;
+}
+.far.fa-times-circle{
+  color: #800000;
+}
+.popup.close i.far.fa-times-circle {
+  float: right;
+}
+.imgDiv {
+  max-width: 100%;
+  margin: 0px;
+  padding: 5px;
+  padding-left: 3px;
+}
+.imgDivAnadir {
+  width: 104px;
+  height: 78px;
+  margin: 0px;
+  padding: 5px;
+  padding-left: 3px;
+}
+.textDiv {
+  margin: 0px;
+  padding-left: 5px;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(64, 64, 131);
+}
+.iconsDiv {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #800000;
+}
+.popup2.icons span i{
+  padding: 4px;
+}
+
+.iconsDiv i, .foot span i { /* Asi los emoticonos no estan juntos */
+  padding: 10px;
+}
+.dateDiv {
+  margin: 0px;
+  padding: 10px;
+  align-items: center;
+  font-size: small;
+  color:#800000;
+  display: block;
+  text-align: right;
 }

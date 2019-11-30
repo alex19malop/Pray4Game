@@ -25,7 +25,6 @@
     <!-- MENU debajo de la cabecera -->
     <div class="filaAuto">
       <div class="row menuUsuariosRegitrados">
-
         <ul class="topnav">
           <li><a href="#">Home</a></li>
           <li>
@@ -41,12 +40,96 @@
           <li><a href="noticiaDelDia.html">Noticia del día</a></li>
           <li><a href="#">Configuración</a></li>
         </ul>
-
-
       </div>
     </div>
 
-    <div class="relleno"></div>
+
+    <div class="bigbox">
+      <div class="bloque">
+        <div class="tituloBocadilloConsola">
+          <div class="tituloConsola"> PS4 </div>
+          <div class="bocadilloConsola">
+            <a class="open-hide" onclick="showMenu(this)" title="menu">Menu</a>
+            <ul class="menuDesplegable">
+              <li onclick="archivar(this)">Archivar</li>
+              <li><a href="">Portfolio</a></li>
+              <li><a href="">Contacto</a></li>    
+            </ul>
+          </div>
+        </div>
+        <div class="draggable_minibloque">
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_god.jpg" title="God of war" alt="God of war"> </div>
+              <div class="textDiv"><a href="#popup" id="god_of_war" onclick="mostrarCajaResumen(this)">God of War</a> </div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time>20/04/2018  00:00</time>
+              </div>
+              <div class="iconsDiv"><a><i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i></a><i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="god_of_war" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_death.jpg" title="Death stranding" alt="Death stranding"> </div>
+              <div class="textDiv"><a href="#popup" id="death_stranding" onclick="mostrarCajaResumen(this)">Death stranding</a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 08/11/2019  00:00 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="death_stranding" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_reddead.jpg" title="Red Dead Redemption 2" alt="Red Dead Redemption 2"> </div>
+              <div class="textDiv"><a href="#popup" id="rdr2" onclick="mostrarCajaResumen(this)">Red Dead Redemption 2 </a> </div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 26/10/2018  21:38 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="rdr2" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_thelast.jpg" title="The last of us" alt="the last of us"> </div>
+              <div class="textDiv"><a href="#popup" id="the_last_of_us" onclick="mostrarCajaResumen(this)"> The last of us </a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 29/07/2014  12:15 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="the_last_of_us" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_spiderman.jpg" title="Spiderman" alt="Spiderman"> </div>
+              <div class="textDiv"><a href="#popup" id="spiderman" onclick="mostrarCajaResumen(this)"> Spiderman </a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time>07/09/2018  00:00</time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="spiderman" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="anadirBloque">
+          <div class="anadirBloque" onclick="crearMinibloque(this)"><i class="fas fa-plus-circle fa-2x" title="añadir"></i></div>
+        </div>
+      </div>
+    </div>
+
 
 
 
