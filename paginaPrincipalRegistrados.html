@@ -5,6 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./script/javaS.js"></script>
   <script src="https://kit.fontawesome.com/a57046b127.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
   </head>
@@ -44,7 +46,10 @@
     </div>
 
 
-    <div class="bigbox">
+    <div class=""></div>
+
+
+    <div class="bigbox" id="bigbox">
       <div class="bloque">
         <div class="tituloBocadilloConsola">
           <div class="tituloConsola"> PS4 </div>
@@ -53,7 +58,7 @@
             <ul class="menuDesplegable">
               <li onclick="archivar(this)">Archivar</li>
               <li><a href="">Portfolio</a></li>
-              <li><a href="">Contacto</a></li>    
+              <li><a href="">Contacto</a></li>
             </ul>
           </div>
         </div>
@@ -124,14 +129,63 @@
             </div>
           </div>
         </div>
+        <div class="anadirBloque" onclick="crearMinibloque(this)"><i class="fas fa-plus-circle fa-2x" title="añadir"></i></div>
+      </div>
+
+      <div class="bloque">
+        <div class="tituloBocadilloConsola">
+          <div class="tituloConsola"> SWITCH </div>
+          <div class="bocadilloConsola">
+            <a class="open-hide" onclick="showMenu(this)" title="menu">Menu</a>
+            <ul class="menuDesplegable">
+              <li onclick="archivar(this)">Archivar</li>
+              <li><a href="">Portfolio</a></li>
+              <li><a href="">Contacto</a></li>    
+            </ul>
+          </div>
+        </div>
+        <div class="draggable_minibloque">
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_zelda.jpg" title="Zelda breath of the wild" alt="Zelda breath of the wild"> </div>
+              <div class="textDiv"><a href="#popup" id="zelda" onclick="mostrarCajaResumen(this)"> Zelda breath of the wild </a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 03/03/2017  09:00 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="zelda" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_mario.jpg" title="Mario Kart 8" alt="Mario Kart 8"> </div>
+              <div class="textDiv"><a href="#popup" id="mario_kart" onclick="mostrarCajaResumen(this)"> Mario Kart 8 </a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 28/04/2017  09:00 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" id="mario_kart" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a></div>
+            </div>
+          </div>
+        </div>
         <div class="anadirBloque">
           <div class="anadirBloque" onclick="crearMinibloque(this)"><i class="fas fa-plus-circle fa-2x" title="añadir"></i></div>
         </div>
       </div>
+  
+  
+  
+
+
+
     </div>
 
-
-
+    <button title="boton" onclick="crearBloque()" id="sendBloque">patata</button>
+  
 
 
 

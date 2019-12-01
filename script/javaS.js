@@ -34,3 +34,117 @@ function checkInput(input) {
 
     return true;
 }
+
+function crearBloque(){
+	var divBloque = document.createElement("div");
+	divBloque.classList.add("bloque");
+	
+	var divTituloBocadilloConsola = document.createElement("div");
+	divTituloBocadilloConsola.classList.add("tituloBocadilloConsola");
+
+	/*var divBocadilloConsola = document.createElement("div");
+	divBocadilloConsola.classList.add(bocadilloConsola);*/
+
+	var textoInput = prompt('Ingrese el nombre de la tabla', 'Ej: Juegos jugados en 2019');
+	if (textoInput === null) {return;}
+	else{document.cookie ='variable='+textoInput+'; expires=Thu, 2 Aug 2021 20:47:11 UTC; path=/';}
+
+	document.cookie ='user=alex19malop; expires=Thu, 2 Aug 2021 20:47:11 UTC; path=/';
+
+	var texto = document.createTextNode("textoInput");
+	var divTituloConsola = document.createElement("div");
+	divTituloConsola.classList.add("tituloConsola");
+	divTituloConsola.appendChild(texto);
+
+	var divAnadirBloque = document.createElement("div");
+	divAnadirBloque.classList.add("anadirBloque");
+	divAnadirBloque.innerHTML = '<i class="fas fa-plus-circle fa-2x" onclick="crearMinibloque(this)" title="añadir"></i>';
+	
+	divTituloBocadilloConsola.appendChild(divTituloConsola);
+	divTituloBocadilloConsola.appendChild(divAnadirBloque);
+	divBloque.appendChild(divTituloBocadilloConsola);
+
+	document.getElementById("bigbox").appendChild(divBloque);
+
+	location.href = "introducirBloque.php"
+	
+
+}
+
+function crearMinibloque(elem){
+    var divMinibloque = document.createElement("div");
+    divMinibloque.classList.add("minibloque");
+
+    var row1 = document.createElement("div");
+    row1.classList.add("row");
+
+    var imgDiv = document.createElement("div");
+    var elementoImg = document.createElement("img");
+    elementoImg.classList.add("image");
+    if(confirm("¿Quiere añadir una imagen? (debe ingresar la URL de la imagen)")){
+        imgDiv.classList.add("imgDiv");
+        elementoImg.src=prompt("Ingrese url de la imagen", "http://1.bp.blogspot.com/-sP4Im83vUzk/T6zvf38AFVI/AAAAAAAACN4/Z4tAntnP26E/s1600/pokemon-elements-pokemon-hd-wallpaper-for-your-pc.jpg");
+    }
+    else{
+        imgDiv.classList.add("imgDiv");
+        elementoImg.src="img/imagen_neutra.jpg";
+    }
+    
+    imgDiv.appendChild(elementoImg);
+
+    var enlace=document.createElement("a");
+    var textoInput = prompt('Ingrese el nombre del juego', 'Ej: Assansing creed');
+
+    if (textoInput === null) {
+        return;
+    }
+
+    var texto = document.createTextNode(textoInput);
+    var textDiv = document.createElement("div");
+    textDiv.classList.add("textDiv");
+    enlace.appendChild(texto);
+    textDiv.appendChild(enlace);
+
+    var close = document.createElement("div");
+    close.classList.add("close");
+    close.innerHTML = '<i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i>';
+
+
+    var row2 = document.createElement("div");
+    row2.classList.add("row");
+
+    var fecha = document.createElement("time");
+    var fech = new Date();
+    var txtfecha = document.createTextNode(fech.getDate()+"/"+(fech.getMonth()+1)+"/"+fech.getFullYear()+" "+fech.getHours()+":"+fech.getMinutes());
+    fecha.appendChild(txtfecha);
+    var dateDiv = document.createElement("div");
+    dateDiv.classList.add("dateDiv");
+    dateDiv.appendChild(fecha);
+
+    var iconsDiv = document.createElement("div");
+    iconsDiv.classList.add("iconsDiv");
+    var iconos = document.createElement("a");
+    iconos.innerHTML = '<i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i class="fas fa-comments" title="comentar"></i><a href="#popup2" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i>';
+    iconsDiv.appendChild(iconos);
+
+    row1.appendChild(imgDiv);
+    row1.appendChild(textDiv);
+    row1.appendChild(close);
+    row2.appendChild(dateDiv);
+    row2.appendChild(iconsDiv);
+    divMinibloque.appendChild(row1);
+    divMinibloque.appendChild(row2);
+
+    var addElem = elem.parentElement;
+    var bloque = addElem.parentElement;
+
+    bloque.insertBefore(divMinibloque, addElem);
+}
+
+function removeAllChilds(a){
+    if(document.getElementById(a)){
+        var a=document.getElementById(a);
+    }
+    while(a.hasChildNodes())
+    a.removeChild(a.firstChild);	
+}

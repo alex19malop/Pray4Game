@@ -14,6 +14,9 @@ if (!$enlace) {
     exit;
 }
 
+$caracteres_malos = array("<", ">", "\"", "'", "/", "<", ">", "'", "/");
+$caracteres_buenos = array("& lt;", "& gt;", "& quot;", "& #x27;", "& #x2F;", "& #060;", "& #062;", "& #039;", "& #047;");
+
 //$db = mysqli_select_db($name, $conexion) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos");
 
 
@@ -23,6 +26,15 @@ $subs_email = ($_POST['email']);
 $subs_username = ($_POST['nombreUsuario']);
 $subs_password = md5(($_POST['contrasena']));
 $subs_date = ($_POST['fecha']);
+
+$subs_name = str_replace($caracteres_malos, $caracteres_buenos, $subs_name);
+$subs_surname = str_replace($caracteres_malos, $caracteres_buenos, $subs_surname);
+$subs_email = str_replace($caracteres_malos, $caracteres_buenos, $subs_email);
+$subs_username = str_replace($caracteres_malos, $caracteres_buenos, $subs_username);
+$subs_password = str_replace($caracteres_malos, $caracteres_buenos, $subs_password);
+$subs_date = str_replace($caracteres_malos, $caracteres_buenos, $subs_date);
+
+
 
 /*
 if(!checkInput($subs_name)){

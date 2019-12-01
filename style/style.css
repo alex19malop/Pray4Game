@@ -566,8 +566,7 @@ select:focus {
   margin-right: 20px;
 }
 .bloque {  
-  width: auto; 
-  max-width: 30%; 
+  width: 25%; 
   height: 100%; /* Al hacer que ocupe el 100% de altura de la bigbox, provoca que los siguientes bloques se vayan a la derecha */
   margin-right: 5px;
   border-color: black;
@@ -579,9 +578,9 @@ select:focus {
 .bloque:last-child {  /* El ultimo bloque no debe de tener margen derecho*/
   margin-right: 0;
 }
-
 .bigbox {
-  width: auto;
+  overflow-x: scroll;
+  width: 100%;
   height: auto;
   margin-top: 20px;
   margin-bottom: 50px;
