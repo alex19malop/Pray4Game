@@ -165,6 +165,12 @@ img.image:hover {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.253);
 }
+.foot a{
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Arial Regular', 'Arial';
+  color: #aaaaaa;
+}
 /* FUENTES*/
 .fontNombreFoot1{
   font-family: 'Roboto Bold', 'Roboto Regular', 'Roboto';
@@ -663,4 +669,16 @@ select:focus {
   color:#800000;
   display: block;
   text-align: right;
+}
+.divAnadirNuevoBloque{
+  float: right;
+  width: 15%;
+  padding: 5px 25px;
+  color: #7f7f7f;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  border-width: 2px;
+  margin: 30px 0px;
+  margin-right: 2%;
 }
