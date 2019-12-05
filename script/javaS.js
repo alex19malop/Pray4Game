@@ -46,27 +46,32 @@ function crearBloque(){
 	divBocadilloConsola.classList.add(bocadilloConsola);*/
 
 	var textoInput = prompt('Ingrese el nombre de la tabla', 'Ej: Juegos jugados en 2019');
-	if (textoInput === null) {return;}
-	else{document.cookie ='variable='+textoInput+'; expires=Thu, 2 Aug 2021 20:47:11 UTC; path=/';}
-
+    if (textoInput === null) {return;}
+    var texto = document.createTextNode(textoInput);
+    
+	document.cookie ='variable='+ textoInput +'; expires=Thu, 2 Aug 2021 20:47:11 UTC; path=/';
 	document.cookie ='user=alex19malop; expires=Thu, 2 Aug 2021 20:47:11 UTC; path=/';
 
-	var texto = document.createTextNode("textoInput");
 	var divTituloConsola = document.createElement("div");
 	divTituloConsola.classList.add("tituloConsola");
 	divTituloConsola.appendChild(texto);
 
 	var divAnadirBloque = document.createElement("div");
-	divAnadirBloque.classList.add("anadirBloque");
-	divAnadirBloque.innerHTML = '<i class="fas fa-plus-circle fa-2x" onclick="crearMinibloque(this)" title="añadir"></i>';
+    divAnadirBloque.classList.add("divAnadirNuevoBloque");
+    divAnadirBloque.classList.add("colorAnadirNuevaCategoria");
+    divAnadirBloque.innerHTML = '<i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría';
+    
+    var row = document.createElement("div");
+    row.classList.add("row");
+    row.appendChild(divAnadirBloque);
 	
 	divTituloBocadilloConsola.appendChild(divTituloConsola);
-	divTituloBocadilloConsola.appendChild(divAnadirBloque);
-	divBloque.appendChild(divTituloBocadilloConsola);
+    divBloque.appendChild(divTituloBocadilloConsola);
+    divBloque.appendChild(row);
 
 	document.getElementById("bigbox").appendChild(divBloque);
 
-	location.href = "introducirBloque.php"
+	/*location.href = "introducirBloque.php"*/
 	
 
 }

@@ -26,11 +26,13 @@
     <div class="filaAuto">
       <div class="row menuUsuariosRegitrados">
         <ul class="topnav">
-          <li><a href="#">Home</a></li>
+          <li><a href="paginaPrincipalRegistrados.html">Home</a></li>
           <li>
               <a href="#">Colaboradores</a>
               <ul>
-                  <li><a href="#">Invitar</a></li>
+                  <li><a href="#">Invitar</a>
+                    <div class="accionDesplegable"></div>
+                  </li>
                   <li><a href="#">Invitaciones &nbsp; recibidas</a></li>
                   <li><a href="#">Usuarios en linea</a></li>
                   <li><a href="#">Lista de colaboradores</a></li>
@@ -44,7 +46,7 @@
     </div>
 
 
-    <div class="divAnadirNuevoBloque"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div>
+    <div class="divAnadirNuevoBloque" onclick="crearBloque()"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div>
 
 
     <div class="bigbox" id="bigbox">
@@ -127,7 +129,9 @@
             </div>
           </div>
         </div>
-        <div class="divAnadirNuevoBloque"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div>
+        <div class="row">
+            <div class="divAnadirNuevoBloque colorAnadirNuevaCategoria"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div>
+        </div>
       </div>
 
 
@@ -175,7 +179,9 @@
             </div>
           </div>
         </div>
-        <div class="divAnadirNuevoBloque"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div>
+        <div class="row">
+          <div class="divAnadirNuevoBloque colorAnadirNuevaCategoria"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div>
+        </div>
       </div>
   
     </div>

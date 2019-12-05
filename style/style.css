@@ -481,6 +481,22 @@ select:focus {
   height: auto; }
 .topnav li ul li:last-child a { padding-bottom: 18px; }
 
+.topnav li ul li div{
+  height: 300px;
+  width: 250px;
+  background: #967474;
+  display: none;
+  position: absolute;
+  top: -0.5%;
+  margin-left: 73%;
+  z-index: 100;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+}
+.topnav li ul li:hover div{
+  display: flex;
+}
 
 /*-------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------*/
@@ -551,6 +567,7 @@ select:focus {
 
 .tituloBocadilloConsola {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding-bottom:20px;
@@ -573,6 +590,7 @@ select:focus {
 }
 .bloque {  
   width: 25%; 
+  max-width: 25%;
   height: 100%; /* Al hacer que ocupe el 100% de altura de la bigbox, provoca que los siguientes bloques se vayan a la derecha */
   margin-right: 5px;
   border-color: black;
@@ -672,7 +690,7 @@ select:focus {
 }
 .divAnadirNuevoBloque{
   float: right;
-  width: 15%;
+  width: auto;
   padding: 5px 25px;
   color: #7f7f7f;
   border-style: solid;
@@ -681,4 +699,96 @@ select:focus {
   border-width: 2px;
   margin: 30px 0px;
   margin-right: 2%;
+  cursor: pointer;
 }
+.colorAnadirNuevaCategoria{
+  background-color: #800000a4;
+  color: white;
+}
+
+
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*----------------------------------------MAPAS----------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+
+.direccionMaps{
+  width: 30%;
+  padding-left: 2%;
+}
+
+#accordion{
+  max-width: 70%;
+  padding-top: 10px;
+  padding-bottom: 10%;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+border: 1px solid #999999/*{borderColorHover}*/;
+background: #dadada/*{bgColorHover}*/  50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/;
+font-weight: normal/*{fwDefault}*/;
+color: #212121/*{fcHover}*/;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited {
+color: #212121/*{fcHover}*/;
+text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+border: 1px solid #aaaaaa/*{borderColorActive}*/;
+background: #ffffff/*{bgColorActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
+font-weight: normal/*{fwDefault}*/;
+color: #212121/*{fcActive}*/;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+color: #212121/*{fcActive}*/;
+text-decoration: none;
+}
+
+.ui-accordion .ui-accordion-header {
+display: block;
+cursor: pointer;
+position: relative;
+margin-top: 2px;
+padding: .5em .5em .5em .7em;
+min-height: 0; /* support: IE7 */
+border-top: 1px solid #cccccc; 
+border-bottom: 1px solid #cccccc;
+}
+
+
+.ui-accordion .ui-accordion-header :hover{background-color:#f7f7f7;}
+
+
+.ui-accordion .ui-accordion-icons {
+padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-noicons {
+padding-left: .7em;
+}
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {
+padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+position: absolute;
+left: .5em;
+top: 50%;
+margin-top: -8px;
+}
+.ui-accordion .ui-accordion-content {
+padding: 2em 1.2em;
+border-top: 0;
+overflow: auto;
+}
+
