@@ -153,3 +153,27 @@ function removeAllChilds(a){
     while(a.hasChildNodes())
     a.removeChild(a.firstChild);	
 }
+
+
+/**************************************************/
+$(document).ready(function() {
+    $("#resultadoBusqueda").html('<p></p>');
+});
+
+function buscar() {
+    var textoBusqueda = $("input#busqueda").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("servidor/buscar.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadoBusqueda").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadoBusqueda").html('<p></p>');
+        };
+};
+
+function mostrarEleccion(elem){
+    var str = $(elem).text();
+    var a = document.createTextNode(str);
+    document.getElementById("muestra").appendChild(a);
+}

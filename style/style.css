@@ -18,8 +18,24 @@ hr{
   align-items: center;
   display: flex;
 }
-.row.spaceBetween{
+.row.spaceBetweenSearchGame{
+  width: 99%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   justify-content: space-around;
+  font-family: 'Roboto Thin', 'Roboto Regular', 'Roboto';
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  padding: 1% 0;
+
+  border: #a9a9a9d5;
+  border-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-right-style: none;
+  border-left-style: none;
+  
 }
 .filaAuto{
   width: auto;
@@ -38,6 +54,14 @@ img.image {
   border-radius: 5px;
 }
 img.image:hover {
+  filter: grayscale(85%);
+}
+img.imageSearch {
+  vertical-align: middle;
+  max-width: 20%;
+  border-radius: 5px;
+}
+img.imageSearch:hover {
   filter: grayscale(85%);
 }
 
@@ -226,6 +250,11 @@ img.image:hover {
   box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   border: solid 1px #cbc9c9;
 }
+.formularioBox.elegirMinibloque{
+  height: 70%;
+  width: 65%;
+  padding-bottom: 2%;
+}
 
 input[type=text],input[type=password], input[type=date]{
   width: 200px;
@@ -259,6 +288,22 @@ input[type=text],input[type=password], input[type=date]{
   box-shadow: 1px 2px 5px rgba(0,0,0,.09);
   border: solid 0px #cbc9c9;
 }
+.icono{
+  display: inline-block;
+  width: 30px;
+  background-color: #bf0000;
+  text-align: center;
+  padding: 8px 0px 8px 15px;
+  margin-top: 5%;
+  -webkit-border-radius: 4px 0px 0px 4px;
+  -moz-border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 0px 0px 4px;
+  color: white;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+  border: solid 0px #cbc9c9;
+}
 
 .formulario.fa-birthday-cake,
 .formulario.fas.fa-envelope,
@@ -281,6 +326,8 @@ input[type=text],input[type=password], input[type=date]{
 
 .centrarCheck{
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 select {
@@ -481,10 +528,11 @@ select:focus {
   height: auto; }
 .topnav li ul li:last-child a { padding-bottom: 18px; }
 
-.topnav li ul li div{
-  height: 300px;
-  width: 250px;
+.topnav li ul li div.accionDesplegable{
+  height: auto;
+  width: auto;
   background: #967474;
+  padding: 10% 5% 5% 5%;
   display: none;
   position: absolute;
   top: -0.5%;
@@ -492,11 +540,24 @@ select:focus {
   z-index: 100;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-
+  font-family: 'Arial Regular', 'Arial';
+  font-weight: 700;
+  color: #ffffff;
+  font-size: medium;
 }
-.topnav li ul li:hover div{
+/*.topnav li ul li div.accionDesplegable.invitar{
+  width: 250px;
+}*/
+.topnav li ul li div.accionDesplegable.invitar .row{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   display: flex;
 }
+.topnav li ul li:hover div{
+  display: block;
+}
+
 
 /*-------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------*/
@@ -533,6 +594,9 @@ select:focus {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+.cuerpotituloNoticias.tipo1{
+  margin-right: 5%;
 }
 .cuerpoFotosNoticias{
   padding-top: 2%;
@@ -792,3 +856,17 @@ border-top: 0;
 overflow: auto;
 }
 
+
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*--------------------------Popup juegos buscados en select----------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+
+
+.cajaResultadosBusqueda{
+  width: 90%;
+  height: 67%;
+  overflow: auto;
+  margin: 5%;
+}

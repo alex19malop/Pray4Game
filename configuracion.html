@@ -1,0 +1,90 @@
+<html>
+  <!--Creadores: Alejandro Massotti Lopez, 100383565. Javier Fernández Velasco, 100383392-->
+  <!--La pagina web está subida a internet: http://ceyma.com/pray4game -->
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a57046b127.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+  </head>
+
+  <body>
+  <div class="centrar">
+    <!-- INICIO de la cabecera habitual -->
+    <div class="head">
+      <div class="row">
+        <p class="tituloHead">PRAY 4 GAME</p>
+      </div>
+    </div>
+    <!-- FIN de la cabecera habitual -->
+
+    <div class="rowNoticias">
+      <div class="cuerpotituloNoticias" align="center">CONFIGURACIÓN DEL USUARIO</div>
+    </div>
+     <hr>
+ 
+    <div class="row" style="padding-top: 3%;">
+      <div id="accordion">
+        <h3>ELIMINAR USUARIO</h3>
+        <div>
+          <div class="row">
+            <form id="borrarUser" name="borrarUser" method="POST" action="servidor/eliminar.php">
+              <p>Para mayor seguridad debe introducir el nombre de su usuario y contraseña para eliminar su cuenta</p>
+              <div class="row">
+                <div class="filaAuto">
+                <label id="icon" for="nombreUsuario"><i class="formulario fas fa-user" title="Nombre de usuario"></i></label>
+                <input type="text" name="nombreUsuario" size="40" required placeholder="Username">
+                </div>
+                <div class="filaAuto">
+                <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                <input type="password" name="contrasena" required placeholder="Contraseña">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <p class="centrarCheck">
+                  <input type="submit" name="submit" value="Eliminar" class="formulario buttonEnviar"
+                    title="enviar">
+                  <input type="reset" value="Cancelar" class="formulario buttonBorrar" title="borrar">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <h3>Cambiar tu nombre o avatar</h3>
+        <div>
+          <p>
+            Para cambiar tu nombre o avatar accede a tu perfil de usuario, y en los ajustes de cuenta puedes acceder a cambiar tu nombre o avatar. Es posible que requiera introducir la contraseña por seguridad.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    
+    
+
+    <!-- INICIO del pie de pagina -->
+    <div class="foot">
+    <div class="footSocial">
+      <div class="row nombreFoot"><p class="fontNombreFoot1">Redes sociales</p></div>
+      <div class="row"><p class="fontNombreFoot2">Siguenos</p></div>
+      <div class="rrssFoot"><span><i class="fab fa-facebook-square fa-2x" title="facebook"></i> </span> <span><i class="fab fa-instagram fa-2x" title="instagram"></i> </span> <span><i class="fab fa-twitter-square fa-2x" title="twitter"></i> </span> <span><i class="fab fa-whatsapp-square fa-2x" title="whatsApp"></i> </span> <span><i class="fab fa-snapchat-square fa-2x" title="snapchat"></i> </span> <span><i class="fab fa-youtube fa-2x" title="youtube"></i></span></div>
+      <div class="opcionesFoot"><span>Idioma</span><span>FAQ</span><span>Contacto</span><span><a href="map.html">Mapa del sitio</a></span><span>Sobre nosotros</span><span>Aspectos legales</span><span>Politicas de privacidad</span></div>
+    </div>
+    <hr class="lineaFoot">
+    <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
+    </div>
+    <!-- FIN del pie de pagina -->
+
+    </div>
+  </body>
+</html>

@@ -9,15 +9,15 @@ $enlace = mysqli_connect($host, $user, $password, $name) or die ("No se ha podid
 
 if (!$enlace) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    echo "errno de depuraci贸n: " . mysqli_connect_errno() . PHP_EOL;
+    echo "error de depuraci贸n: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
 
 $subs_email = ($_POST['email']);
 $subs_password = md5(($_POST['contrasena']));
 
-$resultado=mysqli_query($enlace, "SELECT * FROM ".$table_name." WHERE email = '".$subs_email."' and contrasena = '".$subs_password."'");
+$resultado=mysqli_query($enlace, "SELECT * FROM ".$table_name." WHERE email = '".$subs_email."' AND password = '".$subs_password."'");
 
 if(mysqli_num_rows($resultado)>0){
     mysqli_close($enlace);
@@ -25,6 +25,7 @@ if(mysqli_num_rows($resultado)>0){
 }
 else{
     mysqli_close($enlace);
-    header('Location: inicioSesion.html');
+    header('Location: incioSesion.html');
 }
 ?>
+
