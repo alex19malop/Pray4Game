@@ -1,0 +1,284 @@
+<html>
+<!--Creadores: Alejandro Massotti Lopez, 100383565. Javier Fernández Velasco, 100383392-->
+<!--La pagina web está subida a internet: http://ceyma.com/pray4game -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="script/jquery-1.9.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/a57046b127.js"></script>
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+
+
+<body>
+  <div class="centrar">
+    <!-- INICIO de la cabecera habitual -->
+    <div class="head">
+      <div class="row">
+        <p class="tituloHead">PRAY 4 GAME</p>
+      </div>
+    </div>
+    <!-- FIN de la cabecera habitual -->
+    <!-- MENU debajo de la cabecera -->
+    <div class="filaAuto">
+      <div class="menuI menuUsuariosRegitrados">
+        <div id="nombreUsuario" class="nombreUsuario"></div>
+        <ul class="topnav">
+          <li><a href="paginaPrincipalRegistrados.html">Home</a></li>
+          <li>
+            <a href="#">Colaboradores</a>
+            <ul>
+              <li><a href="#">Agregar amigo</a>
+                <div class="accionDesplegable invitar">
+                    <div class="row" style="margin-bottom: 2%;">AGREGAR AMIGO</div>
+                    <div class="row">
+                      <form id="agregarAmigo" name="agregarAmigo" method="POST" action="servidor/agregar.php">
+                        <div class="row">
+                          <label class="icono" for="nombreUsuario"><i class="formulario fas fa-user"
+                              title="Nombre de usuario"></i></label>
+                          <input type="text" name="nombreUsuario" size="40" required placeholder="Username">
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Agregar" class="formulario buttonEnviar"
+                              title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </div>
+                      </form>
+                    </div>
+                </div>
+              </li>
+              <li><a href="#">Amigos</a></li>
+            </ul>
+          </li>
+          <li><a href="calendario.html">Agenda</a></li>
+          <li><a href="noticiaDelDia.html">Noticia del día</a></li>
+          <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="divAnadirNuevoBloque" onclick="crearBloque()"><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría
+    </div>
+
+    <div id="aaa"></div>
+
+
+
+    <div class="bigbox" id="bigbox">
+      <div class="bloque">
+        <div class="tituloBocadilloConsola">
+          <div class="tituloConsola"> PS4 </div>
+          <div class="bocadilloConsola">
+            <a class="open-hide" onclick="showMenu(this)" title="menu">Menu</a>
+            <ul class="menuDesplegable">
+              <li onclick="archivar(this)">Archivar</li>
+            </ul>
+          </div>
+        </div>
+        <div class="draggable_minibloque">
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_god.jpg" title="God of war" alt="God of war">
+              </div>
+              <div class="textDiv"><a href="#popup" id="god_of_war" onclick="mostrarPopUp(this)">god of war 2018</a>
+              </div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time>20/04/2018 00:00</time>
+              </div>
+              <div class="iconsDiv"><a><i class="fas fa-thumbs-up" title="me gusta"
+                    onclick="cambiarLike(this)"></i></a><i class="fas fa-comments" title="comentar"></i><a
+                  href="#popup2" id="god_of_war" onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square"
+                    title="más información"></i></a></div>
+            </div>
+          </div>
+
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_thelast.jpg" title="The last of us"
+                  alt="the last of us"> </div>
+              <div class="textDiv"><a href="#popup" id="the_last_of_us" onclick="mostrarPopUp(this)">The last of us</a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 29/07/2014 12:15 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i
+                  class="fas fa-comments" title="comentar"></i><a href="#popup2" id="the_last_of_us"
+                  onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_spiderman.jpg" title="Spiderman" alt="Spiderman">
+              </div>
+              <div class="textDiv"><a href="#popup" id="spiderman" onclick="mostrarPopUp(this)">Spiderman PS4</a>
+              </div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time>07/09/2018 00:00</time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i
+                  class="fas fa-comments" title="comentar"></i><a href="#popup2" id="spiderman"
+                  onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <a href ="#buscador" onclick="guardarElem(this)"><div class="divAnadirNuevoBloque colorAnadirNuevaCategoria" ><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div></a>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="bloque">
+        <div class="tituloBocadilloConsola">
+          <div class="tituloConsola"> SWITCH </div>
+          <div class="bocadilloConsola">
+            <a class="open-hide" onclick="showMenu(this)" title="menu">Menu</a>
+            <ul class="menuDesplegable">
+              <li onclick="archivar(this)">Archivar</li>
+            </ul>
+          </div>
+        </div>
+        <div class="draggable_minibloque">
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_zelda.jpg" title="Zelda breath of the wild"
+                  alt="Zelda breath of the wild"> </div>
+              <div class="textDiv"><a href="#popup" id="zelda" onclick="mostrarPopUp(this)">Zelda breath of the wild</a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 03/03/2017 09:00 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i
+                  class="fas fa-comments" title="comentar"></i><a href="#popup2" id="zelda"
+                  onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="minibloque">
+            <div class="row">
+              <div class="imgDiv"> <img class="image" src="img/color_mario.jpg" title="Mario Kart 8" alt="Mario Kart 8">
+              </div>
+              <div class="textDiv"><a href="#popup" id="mario_kart" onclick="mostrarPopUp(this)">mario kart 8</a></div>
+              <div class="close"> <i class="far fa-times-circle" title="cerrar" onclick="ocultar(this)"></i> </div>
+            </div>
+            <div class="row">
+              <div class="dateDiv">
+                <time> 28/04/2017 09:00 </time>
+              </div>
+              <div class="iconsDiv"> <i class="fas fa-thumbs-up" title="me gusta" onclick="cambiarLike(this)"></i> <i
+                  class="fas fa-comments" title="comentar"></i><a href="#popup2" id="mario_kart"
+                  onclick="mostrarCajaCompartir(this)"><i class="far fa-share-square" title="más información"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <a href ="#buscador" onclick="guardarElem(this)"><div class="divAnadirNuevoBloque colorAnadirNuevaCategoria" ><i class="fas fa-plus"></i>&nbsp;Añadir nueva categoría</div></a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- INICIO del pie de pagina -->
+    <div class="foot">
+    <div class="footSocial">
+      <div class="row nombreFoot"><p class="fontNombreFoot1">Redes sociales</p></div>
+      <div class="row"><p class="fontNombreFoot2">Siguenos</p></div>
+      <div class="rrssFoot"><span><i class="fab fa-facebook-square fa-2x" title="facebook"></i> </span> <span><i class="fab fa-instagram fa-2x" title="instagram"></i> </span> <span><i class="fab fa-twitter-square fa-2x" title="twitter"></i> </span> <span><i class="fab fa-whatsapp-square fa-2x" title="whatsApp"></i> </span> <span><i class="fab fa-snapchat-square fa-2x" title="snapchat"></i> </span> <span><i class="fab fa-youtube fa-2x" title="youtube"></i></span></div>
+      <div class="opcionesFoot"><span><a>Idioma</a></span><span><a href="FAQ.html" target="_blank">FAQ</a></span><span><a>Contacto</a></span><span><a href="map.html" target="_blank">Localización</a></span><span><a>Sobre nosotros</a></span><span><a href="aspectosLegales.html" target="_blank">Aspectos legales</a></span><span><a href="politicaPrivacidad.html" target="_blank">Politicas de privacidad</a></span></div>
+    </div>
+    <hr class="lineaFoot">
+    <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
+    </div>
+    <!-- FIN del pie de pagina -->
+
+
+    <div id="buscador" class="modal2 overlay">
+        <div class="buscador">
+        <a href="#" class="closePopup" title="cerrar"><i class="far fa-times-circle" aria-hidden="true" onclick="cerrarPopUp()"></i></a>
+        <div class="rowNoticias">
+          <div class="cuerpotituloNoticias tipo1">ELEGIR JUEGO</div>
+        </div>
+        <hr>
+        <div class="row">
+          <form accept-charset="utf-8" method="POST">
+            <input type="text" name="busqueda" id="busqueda" value="" placeholder="" maxlength="30" autocomplete="off" onKeyUp="buscar();"/>
+          </form>
+        </div>
+
+        <div class="cajaResultadosBusqueda">
+          <div id="resultadoBusqueda"></div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="modal overlay" id="popup">
+      <div class="centrar">
+        <div class="row">
+          <div class="cuerpoJuego">
+              <div class="row">
+                  <div class="imagenJuego"> 
+                      <img id="imagenPopup" class="image" src="img/imagenCabecera.jpg" alt="imagenJuego"> 
+                  </div>     
+              </div>
+              <div class="row juego">
+                  <div class="tituloJuego">
+                      <p class="letrasTitulo" id="letrasTitulo"></p> <img id="pegiId" src="" alt="imagenJuego" width="35" height="35">
+                  </div>
+                  <div class="desplegableJuego">
+                      <a href="#" class="closePopup" id="closePopup" title="cerrar" onclick="reiniciarChat(this)" ><i class="far fa-times-circle"></i></a>
+                  </div>
+                  <div class="tituloJuegoDescripcion">
+                      <p>Descripción</p> 
+                  </div>       
+                  <div class="descripcionJuego">
+                      <p id="descrPopup"></p> 
+                  </div>
+                  <div class="tituloJuegoDescripcion">
+                      <p>Actividad</p> 
+                  </div>   
+                  <div id="box"></div>
+                  <input id="input" placeholder="Escriba su mensaje"/>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+
+  </div>
+</body>
+<script src="./script/javaS.js"></script>
+</html>

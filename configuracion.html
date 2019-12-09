@@ -1,0 +1,293 @@
+<html>
+  <!--Creadores: Alejandro Massotti Lopez, 100383565. Javier Fernández Velasco, 100383392-->
+  <!--La pagina web está subida a internet: http://ceyma.com/pray4game -->
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="script/jquery-1.9.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/a57046b127.js"></script>
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="./script/javaS.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+  </head>
+
+  <body>
+  <div class="centrar">
+    <!-- INICIO de la cabecera habitual -->
+    <div class="head">
+      <div class="row">
+        <p class="tituloHead">PRAY 4 GAME</p>
+      </div>
+    </div>
+    <!-- FIN de la cabecera habitual -->
+        <div class="filaAuto">
+      <div class="menuI menuUsuariosRegitrados">
+        <div id="nombreUsuarioConf" class="nombreUsuario"></div>
+        <ul class="topnav">
+          <li><a href="paginaPrincipalRegistrados.html">Home</a></li>
+          <li>
+            <a href="#">Colaboradores</a>
+            <ul>
+              <li><a href="#">Agregar amigo</a>
+                <div class="accionDesplegable invitar">
+                    <div class="row" style="margin-bottom: 2%;">AGREGAR AMIGO</div>
+                    <div class="row">
+                      <form id="agregarAmigo" name="agregarAmigo" method="POST" action="servidor/agregar.php">
+                        <div class="row">
+                          <label class="icono" for="nombreUsuario"><i class="formulario fas fa-user"
+                              title="Nombre de usuario"></i></label>
+                          <input type="text" name="nombreUsuario" size="40" required placeholder="Username">
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Agregar" class="formulario buttonEnviar"
+                              title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </div>
+                      </form>
+                    </div>
+                </div>
+              </li>
+              <li><a href="#">Amigos</a></li>
+            </ul>
+          </li>
+          <li><a href="calendario.html">Agenda</a></li>
+          <li><a href="noticiaDelDia.html">Noticia del día</a></li>
+          <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="rowNoticias">
+      <div class="cuerpotituloNoticias" align="center">CONFIGURACIÓN DEL USUARIO</div>
+    </div>
+     <hr>
+ 
+    <div class="row" style="padding-top: 3%;">
+      <div id="accordion">
+        <h3>&nbsp;&nbsp;Eliminar usuario</h3>
+        <div>
+          <div class="row">
+            <form id="borrarUser" name="borrarUser" method="POST" action="servidor/eliminar.php">
+              <p>Para mayor seguridad debe introducir el nombre de su usuario y contraseña para eliminar su cuenta</p>
+              <div class="row">
+                <div class="filaAuto">
+                <label id="icon" for="nombreUsuario"><i class="formulario fas fa-user" title="Nombre de usuario"></i></label>
+                <input type="text" name="nombreUsuario" size="40" required placeholder="Username">
+                </div>
+                <div class="filaAuto">
+                <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                <input type="password" name="contrasena" required placeholder="Contraseña">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <p class="centrarCheck">
+                  <input type="submit" name="submit" value="Eliminar" class="formulario buttonEnviar"
+                    title="enviar">
+                  <input type="reset" value="Cancelar" class="formulario buttonBorrar" title="borrar">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <h3>&nbsp;&nbsp;Cerrar sesión</h3>
+        <div>
+            <div class="row">
+                <p class="centrarCheck">
+                  <div class="formulario buttonEnviar" title="enviar" style="margin: 0;" onclick="cerrarSesion();">CERRAR SESIÓN</div>
+            </div>        
+        </div>
+        <h3>&nbsp;&nbsp;Modificar contraseña</h3>
+        <div>
+            
+                <form name="mp" method="POST" action="servidor/modPassword.php">
+                    <p>Introduzca su usuario y su nueva contraseña</p>
+                    <br>
+                    <label id="icon" for="username"><i class="formulario fas fa-user"  title="Username"></i></label>
+                    <input type="text" name="username" maxlength="80" size="30" required placeholder="Username">
+                    
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasenaVieja" required placeholder="Contraseña antigua">
+                    <br>
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasena" required placeholder="Contraseña nueva">
+                    <hr>
+                    <div class="row">
+                        <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </p>
+                    </div>
+                </form>
+
+        </div>
+        
+        
+        <h3>&nbsp;&nbsp;Modificar nombre de usuario</h3>
+        <div>
+            
+                <form name="mu" method="POST" action="servidor/modUsername.php">
+                    <p>Introduzca su usuario, contraseña y su nuevo nombre de usuario</p>
+                    <br>
+                    <label id="icon" for="username"><i class="formulario fas fa-user"  title="username"></i></label>
+                    <input type="text" name="username" maxlength="80" size="30" required placeholder="Username">
+                    
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasena" required placeholder="Contraseña">
+                    <br>
+                    <label id="icon" for="usernameNew"><i class="formulario fas fa-user"  title="username"></i></label>
+                    <input type="text" name="usernameNew" maxlength="80" size="30" required placeholder="Username nuevo">
+                    <hr>
+                    <div class="row">
+                        <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </p>
+                    </div>
+                </form>
+
+        </div>
+        
+        
+        <h3>&nbsp;&nbsp;Modificar nombre</h3>
+        <div>
+            
+                <form name="mn" method="POST" action="servidor/modName.php">
+                    <p>Introduzca su usuario, contraseña y su nuevo nombre</p>
+                    <br>
+                    <label id="icon" for="username"><i class="formulario fas fa-user"  title="username"></i></label>
+                    <input type="text" name="username" maxlength="80" size="30" required placeholder="Username">
+                    
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasena" required placeholder="Contraseña">
+                    <br>
+                    <label id="icon" for="nameNew"><i class="formulario fas fa-user"  title="name"></i></label>
+                    <input type="text" name="nameNew" maxlength="80" size="30" required placeholder="Nombre nuevo">
+                    <hr>
+                    <div class="row">
+                        <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </p>
+                    </div>
+                </form>
+
+        </div>
+        
+        
+        
+        <h3>&nbsp;&nbsp;Modificar apellidos</h3>
+        <div>
+            
+                <form name="ms" method="POST" action="servidor/modSurname.php">
+                    <p>Introduzca su usuario, contraseña y sus nuevos apellidos</p>
+                    <br>
+                    <label id="icon" for="username"><i class="formulario fas fa-user"  title="username"></i></label>
+                    <input type="text" name="username" maxlength="80" size="30" required placeholder="Username">
+                    
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasena" required placeholder="Contraseña">
+                    <br>
+                    <label id="icon" for="surnameNew"><i class="formulario fas fa-user"  title="Surname"></i></label>
+                    <input type="text" name="surnameNew" maxlength="80" size="30" required placeholder="Apellidos nuevos">
+                    <hr>
+                    <div class="row">
+                        <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </p>
+                    </div>
+                </form>
+
+        </div>
+        
+        
+        <h3>&nbsp;&nbsp;Modificar email</h3>
+        <div>
+            
+                <form name="me" method="POST" action="servidor/modEmail.php">
+                    <p>Introduzca su usuario, contraseña y su nuevo email</p>
+                    <br>
+                    <label id="icon" for="username"><i class="formulario fas fa-user"  title="username"></i></label>
+                    <input type="text" name="username" maxlength="80" size="30" required placeholder="Username">
+                    
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasena" required placeholder="Contraseña">
+                    <br>
+                    <label id="icon" for="emailNew"><i class="formulario fas fa-envelope"  title="Email"></i></label>
+                    <input id="mail" type="text" name="emailNew" maxlength="80" size="30" required placeholder="Email nuevo">
+                    <hr>
+                    <div class="row">
+                        <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </p>
+                    </div>
+                </form>
+
+        </div>
+        
+        
+        <h3>&nbsp;&nbsp;Modificar fecha de nacimiento</h3>
+        <div>
+            
+                <form name="me" method="POST" action="servidor/modDate.php">
+                    <p>Introduzca su usuario, contraseña y su nueva fecha de nacimiento</p>
+                    <br>
+                    <label id="icon" for="username"><i class="formulario fas fa-user"  title="username"></i></label>
+                    <input type="text" name="username" maxlength="80" size="30" required placeholder="Username">
+                    
+                    <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+                    <input type="password" name="contrasena" required placeholder="Contraseña">
+                    <br>
+                    <label id="icon" for="fechaNew"><i class="formulario fas fa-birthday-cake" title="Fecha de nacimiento"></i></label>
+                    <input type="date" name="fechaNew" required placeholder="Fecha de nacimiento nueva">                    
+                    <hr>
+                    <div class="row">
+                        <p class="centrarCheck">
+                            <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+                            <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+                        </p>
+                    </div>
+                </form>
+
+        </div>
+        
+        
+      </div>
+    </div>
+    
+    <div id="eee"></div>
+    
+    
+
+    <!-- INICIO del pie de pagina -->
+    <div class="foot">
+    <div class="footSocial">
+      <div class="row nombreFoot"><p class="fontNombreFoot1">Redes sociales</p></div>
+      <div class="row"><p class="fontNombreFoot2">Siguenos</p></div>
+      <div class="rrssFoot"><span><i class="fab fa-facebook-square fa-2x" title="facebook"></i> </span> <span><i class="fab fa-instagram fa-2x" title="instagram"></i> </span> <span><i class="fab fa-twitter-square fa-2x" title="twitter"></i> </span> <span><i class="fab fa-whatsapp-square fa-2x" title="whatsApp"></i> </span> <span><i class="fab fa-snapchat-square fa-2x" title="snapchat"></i> </span> <span><i class="fab fa-youtube fa-2x" title="youtube"></i></span></div>
+      <div class="opcionesFoot"><span><a>Idioma</a></span><span><a href="FAQ.html" target="_blank">FAQ</a></span><span><a>Contacto</a></span><span><a href="map.html" target="_blank">Localización</a></span><span><a>Sobre nosotros</a></span><span><a href="aspectosLegales.html" target="_blank">Aspectos legales</a></span><span><a href="politicaPrivacidad.html" target="_blank">Politicas de privacidad</a></span></div>
+    </div>
+    <hr class="lineaFoot">
+    <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
+    </div>
+    <!-- FIN del pie de pagina -->
+
+    </div>
+  </body>
+</html>

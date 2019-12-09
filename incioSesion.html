@@ -1,0 +1,70 @@
+<html>
+  <!--Creadores: Alejandro Massotti Lopez, 100383565. Javier Fernández Velasco, 100383392-->
+  <!--La pagina web está subida a internet: http://ceyma.com/pray4game -->
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+    <script src="script/jquery-1.9.1.min.js"></script>
+  <script src="script/javaS.js"></script>
+  <script src="https://kit.fontawesome.com/a57046b127.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+
+  <body>
+  <div class="centrar">
+    <!-- INICIO de la cabecera habitual -->
+    <div class="head">
+      <div class="row">
+        <p class="tituloHead">PRAY 4 GAME</p>
+      </div>
+    </div>
+    <!-- FIN de la cabecera habitual -->
+    <div class="filaAuto">
+      <div class="row menuUsuariosRegitrados" style="margin-bottom: 3%;">
+        <a href="paginaInicial.html"><i class="fas fa-backspace fa-2x"></i></a>
+      </div>
+    </div>
+
+    <!--  Div incio de sesion -->
+    <div class="centralFormularios">
+    <div id="divInicioSesion">
+      <div class="formularioBox">
+      <form id="inicioSes" name="inicioSes" method="POST" action="servidor/initSesion.php">
+        <h1>INICIAR SESIÓN</h1>
+        <hr>
+        <label id="icon" for="email"><i class="formulario fas fa-envelope"  title="Email"></i></label>
+        <input id="mail" type="text" name="email" maxlength="80" size="30" required placeholder="Email" onKeyUp="asignarUsuarioInicioSesion();">
+        <label id="icon" for="contrasena"><i class="formulario fas fa-lock" title="Contraseña"></i></label>
+        <input type="password" name="contrasena" required placeholder="Contraseña">
+        <hr>
+        <div class="row">
+        <p class="centrarCheck">
+          <input type="submit" name="submit" value="Enviar" class="formulario buttonEnviar" title="enviar">
+          <input type="reset" value="Borrar" class="formulario buttonBorrar" title="borrar">
+        </p>
+        </div>
+      </form>
+      </div>
+    </div>
+    </div>
+
+
+
+    <!-- INICIO del pie de pagina -->
+    <div class="foot">
+    <div class="footSocial">
+      <div class="row nombreFoot"><p class="fontNombreFoot1">Redes sociales</p></div>
+      <div class="row"><p class="fontNombreFoot2">Siguenos</p></div>
+      <div class="rrssFoot"><span><i class="fab fa-facebook-square fa-2x" title="facebook"></i> </span> <span><i class="fab fa-instagram fa-2x" title="instagram"></i> </span> <span><i class="fab fa-twitter-square fa-2x" title="twitter"></i> </span> <span><i class="fab fa-whatsapp-square fa-2x" title="whatsApp"></i> </span> <span><i class="fab fa-snapchat-square fa-2x" title="snapchat"></i> </span> <span><i class="fab fa-youtube fa-2x" title="youtube"></i></span></div>
+      <div class="opcionesFoot"><span><a>Idioma</a></span><span><a href="FAQ.html" target="_blank">FAQ</a></span><span><a>Contacto</a></span><span><a href="map.html" target="_blank">Localización</a></span><span><a>Sobre nosotros</a></span><span><a href="aspectosLegales.html" target="_blank">Aspectos legales</a></span><span><a href="politicaPrivacidad.html" target="_blank">Politicas de privacidad</a></span></div>
+    </div>
+    <hr class="lineaFoot">
+    <div class="row derechosReservadosFoot">Todos los derechos reservados</div>
+    </div>
+    <!-- FIN del pie de pagina -->
+
+    </div>
+  </body>
+</html>
