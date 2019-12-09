@@ -1,22 +1,15 @@
 # PRAY 4 GAME 🖥️
 
-## Comenzando
-### Instalación 🔧
-_Para compilar el archivo.cpp escribe lo siguiente en el terminal, debe tener instalado gcc_
-```
-g++ nasteroids-seq.cpp -o ejecutable
-```
+## Importante
+**Esta página web utiliza un servidor con base de datos, por lo que al descargar el código no funcionarán las principales funcionalidades de php, como por ejemplo, iniciar sesión o registrarse.**
 
-_Para ejecutarlo, introduce el siguiente código:_
-```
-./ejecutable num_asteroides num_iteraciones num_planetas seed
-```
+_Para ver la página en su totalidad debe seleccionar el siguiente enlace:_
+<http://ceyma.com/pray4game/paginaInicial.html>
+
 
 ## Construido con 🛠️
-Trabajo realizado en C++
+Trabajo realizado en html, CSS, JS y php.
 
 ## Autores ✒️
 * Alejandro Massotti López <100383565@alumnos.uc3m.es>
 * Alberto Lobato Díaz <100383508@alumnos.uc3m.es>
-* Víctor Moreno Azofra <100383393@alumnos.uc3m.es>
-* Javier Fernández Velasco <100383392@alumnos.uc3m.es>
