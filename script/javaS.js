@@ -6,6 +6,7 @@ function guardarElem(elem){
     document.getElementById("buscador").style.display = "flex";
 }
 
+/*Comprueba que no hay caracteres incorrectos*/
 function checkInput(input) {
     if (input === null) {
         return false;
@@ -19,6 +20,7 @@ function checkInput(input) {
     return true;
 }
 
+/*Crea una nueva columna a partir de un titulo que pide con un promp*/
 function crearBloque(){
 	var divBloque = document.createElement("div");
 	divBloque.classList.add("bloque");
@@ -60,6 +62,7 @@ function crearBloque(){
 
 }
 
+/*Borra todos los hijos a partir de un elemento pasado por parametro*/
 function removeAllChilds(a){
     if(document.getElementById(a)){
         var a=document.getElementById(a);
@@ -70,6 +73,7 @@ function removeAllChilds(a){
 
 
 /**************************************************/
+/*Budca en la base de datos un juego y en buscar.php imprime en el buscador cada uno de los juegos*/
 $(document).ready(function() {
     $("#resultadoBusqueda").html('<p></p>');
 });
@@ -99,6 +103,7 @@ function crearMinibloque(elem){
     
 }
 
+/*Al hacer click en un juego en el buscador, se creara un minibloque en su correspondiente tabla*/
 function varMinibloque(elem){
     var juego = $(elem).text();
     var nombre;
@@ -114,7 +119,9 @@ function varMinibloque(elem){
         $.post("servidor/descripcion.php", {valorBusqueda: juego}, function(dato) {
             descr = dato;
 
+            document.getElementById("busqueda").value = "";
             document.getElementById("buscador").style.display = "none";
+            $("#resultadoBusqueda").html('<p></p>');
 
             var divMinibloque = document.createElement("div");
 
@@ -205,7 +212,7 @@ function reiniciarChat(elem){
     });
   })();
   
-  
+  /*Al hacer click en un juego, se busca sus atributos en la base de datos y se rellena el popup con estos mismos atributos*/
  function mostrarPopUp(elem){
     var juego = $(elem).text();
     var nombre;
@@ -238,6 +245,8 @@ function reiniciarChat(elem){
 
 function cerrarPopUp(){
     document.getElementById("buscador").style.display = "none";
+    document.getElementById("busqueda").value = "";
+    $("#resultadoBusqueda").html('<p></p>');
 }
 
 
@@ -290,16 +299,11 @@ $( document ).ready( function() {
     document.getElementById("nombreUsuario").appendChild(texto);
 });
 
-$( document ).ready( function() {
-    var text = document.createTextNode(localStorage.getItem('Nombre'));
-    document.getElementById("nombreUsuarioConf").appendChild(text);
-});
 
 
 
 
-
-
+/*Comprueba que el usuario introdudcido al registrarse no se encuentra en la base de datos*/
 $(document).ready(function() {
     $("#alerta").html('<p></p>');
 });
@@ -321,6 +325,7 @@ $(document).ready(function() {
     $("#alerta2").html('<p></p>');
 });
 
+/*Comprueba que el email introdudcido al registrarse no se encuentra en la base de datos*/
 function comprobarEmail() {
     var textoBusqueda = $("input#email").val();
 

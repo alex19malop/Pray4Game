@@ -316,9 +316,10 @@ img.imageSearch:hover {
   -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   border: solid 1px #cbc9c9;
-  height: auto;
+  height: 90%;
   width: 65%;
   padding-bottom: 2%;
+  max-height: 95%;
 }
 .modal2.overlay {
   position: fixed;
@@ -1001,8 +1002,8 @@ overflow: auto;
 .cajaResultadosBusqueda{
   width: 90%;
   height: auto;
-  max-height: 67%;
-  overflow: auto;
+  max-height: 64%;
+  overflow-y: scroll;
   margin:5%;
 }
 
